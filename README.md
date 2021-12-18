@@ -5,7 +5,7 @@
 - Disfigure the original art of game
 - Make you appreciate things after you miss them
 - ...and make you bitter! 
-## How do I help?
+## How can I help?
 You can help me work on this mod! How? Just work **for** me!
 
 I gotta make them sprite sheets junky, but I am out of creative juice! And if you are full of them, why won't you create your own junkArt™️ and allow for me to use it in the mod?
