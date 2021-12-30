@@ -11,6 +11,7 @@ spiritwhip = create_sound('resources/spiritattack.wav')
 
 roffy_character_id = 4
 alto_character_id = 5
+dirk_character_id = 18
 
 -- the whip sound is split into two different vanilla sounds, one when pulling out the whip
 set_vanilla_sound_callback(VANILLA_SOUND.PLAYER_WHIP1, VANILLA_SOUND_CALLBACK_TYPE.STARTED, function(whip_sound)
@@ -36,5 +37,8 @@ set_vanilla_sound_callback(VANILLA_SOUND.PLAYER_WHIP2, VANILLA_SOUND_CALLBACK_TY
     if whip_sound:get_parameter(VANILLA_SOUND_PARAM.PLAYER_CHARACTER) == alto_character_id then
         whip_sound:stop()
         spiritwhip:play()
+    end
+    if whip_sound:get_parameter(VANILLA_SOUND_PARAM.PLAYER_CHARACTER) == dirk_character_id then
+        whip_sound:stop()
     end
 end)
