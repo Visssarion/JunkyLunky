@@ -1,5 +1,5 @@
 # JunkyLunky
-### Funky mod that makes your **Spelunky 2** look all **junky and clunky**! 
+### Funky all-goes mod with comedic/silly/amateurish-bad style!
 ## Main goals:
 - Create a mod that will make the game look funny
 - Disfigure the original art of game
