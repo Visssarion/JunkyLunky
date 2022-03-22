@@ -1,7 +1,7 @@
 meta.name = 'JunkyLunky Script'
 meta.version = '0.1'
-meta.description = 'Performs Junky Scripts (Souns, etc.)'
-meta.author = 'Vissa'
+meta.description = 'Performs Junky Scripts (Souns, Textures, etc.)'
+meta.author = 'Trixelized, Vissa'
 
 -- Thanks @Trixelized
 pre_spiritwhip = create_sound('Resources/pre_spiritattack.wav')
@@ -50,3 +50,72 @@ set_vanilla_sound_callback(VANILLA_SOUND.PLAYER_WHIP2, VANILLA_SOUND_CALLBACK_TY
         whip_sound:set_pitch(1.5+math.random())
     end
 end)
+
+--[[
+
+Random shoppie code! By Trixelized
+
+--]]
+
+local texture_def = get_texture_definition(TEXTURE.DATA_TEXTURES_MONSTERSBASIC01_0)
+shoppie_number = 0;
+
+
+texture_def.texture_path = "custom_textures/custom_shoppie_1.png"
+shoppie_tex_1 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_2.png"
+shoppie_tex_2 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_skeleton.png"
+skeleton_text = define_texture(texture_def)
+
+
+texture_def = get_texture_definition(TEXTURE.DATA_TEXTURES_MONSTERS01_0)
+texture_def.texture_path = "custom_textures/custom_lizard.png"
+lizard_text = define_texture(texture_def)
+
+
+
+set_callback(function()
+
+	local shoppies = get_entities_by_type(ENT_TYPE.MONS_SHOPKEEPER)
+	for s, shoppie in ipairs(shoppies) do
+	
+		local r_tex = math.random(3)
+		
+		if r_tex == 1 then
+			-- simply don't change the texture
+		elseif r_tex == 2 then
+			get_entity(shoppie):set_texture(shoppie_tex_1)
+		elseif r_tex == 3 then
+			get_entity(shoppie):set_texture(shoppie_tex_2)
+		end
+		
+	end
+    
+    local skeletons = get_entities_by_type(ENT_TYPE.MONS_SKELETON)
+    for s, skeleton in ipairs(skeletons) do
+    
+        local r_tex = math.random(50)
+        
+        if r_tex == 1 then
+            get_entity(skeleton):set_texture(skeleton_text)
+        end   
+    end
+
+    local lizards = get_entities_by_type(ENT_TYPE.MONS_HORNEDLIZARD)
+    for s, lizard in ipairs(lizards) do
+    
+        local r_tex = math.random(3)
+        
+        if r_tex == 1 then
+            get_entity(lizard):set_texture(lizard_text)
+        end   
+    end
+    
+
+end, ON.POST_LEVEL_GENERATION)
+
+
+
