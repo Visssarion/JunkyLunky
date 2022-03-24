@@ -61,11 +61,56 @@ local texture_def = get_texture_definition(TEXTURE.DATA_TEXTURES_MONSTERSBASIC01
 shoppie_number = 0;
 
 
-texture_def.texture_path = "custom_textures/custom_shoppie_1.png"
-shoppie_tex_1 = define_texture(texture_def)
+texture_def.texture_path = "custom_textures/custom_shoppie_01.png"
+shoppie_tex_01 = define_texture(texture_def)
 
-texture_def.texture_path = "custom_textures/custom_shoppie_2.png"
-shoppie_tex_2 = define_texture(texture_def)
+texture_def.texture_path = "custom_textures/custom_shoppie_02.png"
+shoppie_tex_02 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_03.png"
+shoppie_tex_03 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_04.png"
+shoppie_tex_04 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_05.png"
+shoppie_tex_05 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_06.png"
+shoppie_tex_06 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_07.png"
+shoppie_tex_07 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_08.png"
+shoppie_tex_08 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_09.png"
+shoppie_tex_09 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_10.png"
+shoppie_tex_10 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_11.png"
+shoppie_tex_11 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_12.png"
+shoppie_tex_12 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_13.png"
+shoppie_tex_13 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_14.png"
+shoppie_tex_14 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_15.png"
+shoppie_tex_15 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_16.png"
+shoppie_tex_16 = define_texture(texture_def)
+
+texture_def.texture_path = "custom_textures/custom_shoppie_17.png"
+shoppie_tex_17 = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_skeleton.png"
 skeleton_text = define_texture(texture_def)
@@ -82,15 +127,53 @@ set_callback(function()
 	local shoppies = get_entities_by_type(ENT_TYPE.MONS_SHOPKEEPER)
 	for s, shoppie in ipairs(shoppies) do
 	
-		local r_tex = math.random(3)
+		local r_tex = math.random(17)
 		
-		if r_tex == 1 then
-			-- simply don't change the texture
-		elseif r_tex == 2 then
-			get_entity(shoppie):set_texture(shoppie_tex_1)
-		elseif r_tex == 3 then
-			get_entity(shoppie):set_texture(shoppie_tex_2)
-		end
+        if r_tex == 1 then
+            -- simply don't change the texture
+        elseif r_tex == 2 then
+            get_entity(shoppie):set_texture(shoppie_tex_01)
+        elseif r_tex == 3 then
+            get_entity(shoppie):set_texture(shoppie_tex_02)
+        elseif r_tex == 4 then
+            get_entity(shoppie):set_texture(shoppie_tex_03)
+        elseif r_tex == 5 then
+            get_entity(shoppie):set_texture(shoppie_tex_04)
+        elseif r_tex == 6 then
+            get_entity(shoppie):set_texture(shoppie_tex_05)
+        elseif r_tex == 7 then
+            get_entity(shoppie):set_texture(shoppie_tex_06)
+        elseif r_tex == 8 then
+            get_entity(shoppie):set_texture(shoppie_tex_07)
+        elseif r_tex == 9 then
+            get_entity(shoppie):set_texture(shoppie_tex_08)
+        elseif r_tex == 10 then
+            get_entity(shoppie):set_texture(shoppie_tex_09)
+        elseif r_tex == 11 then
+            get_entity(shoppie):set_texture(shoppie_tex_10)
+        elseif r_tex == 12 then
+            get_entity(shoppie):set_texture(shoppie_tex_11)
+        elseif r_tex == 13 then
+            get_entity(shoppie):set_texture(shoppie_tex_12)
+        elseif r_tex == 14 then
+            get_entity(shoppie):set_texture(shoppie_tex_13)
+        elseif r_tex == 15 then
+            get_entity(shoppie):set_texture(shoppie_tex_14)
+        elseif r_tex == 16 then
+            get_entity(shoppie):set_texture(shoppie_tex_15)
+        elseif r_tex == 16 then
+            get_entity(shoppie):set_texture(shoppie_tex_16)
+        end
+
+		--[[
+        if r_tex == 1 then
+            -- simply don't change the texture
+        elseif r_tex == 2 then
+            get_entity(shoppie):set_texture(shoppie_tex_1)
+        elseif r_tex == 3 then
+            get_entity(shoppie):set_texture(shoppie_tex_2)
+        end
+        ]]
 		
 	end
     
