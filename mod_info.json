@@ -1,6 +1,6 @@
 {
     "image_map": {
-        "Resources/jelly_texture.png": {
+        "custom_textures/jelly_texture.png": {
             "Data/Textures/monsters_ghost.png": [
                 {
                     "from": [ 0, 256, 1279, 511 ],

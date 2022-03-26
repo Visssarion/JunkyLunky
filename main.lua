@@ -4,10 +4,10 @@ meta.description = 'Performs Junky Scripts (Souns, Textures, etc.)'
 meta.author = 'Trixelized, Vissa'
 
 -- Thanks @Trixelized
-pre_spiritwhip = create_sound('Resources/pre_spiritattack.wav')
-spiritwhip = create_sound('Resources/spiritattack.wav')
-pre_chainwhip = create_sound('Resources/whipchain_a1.wav')
-chainwhip = create_sound('Resources/whipchain_b1.wav')
+pre_spiritwhip = create_sound('custom_sounds/pre_spiritattack.wav')
+spiritwhip = create_sound('custom_sounds/spiritattack.wav')
+pre_chainwhip = create_sound('custom_sounds/whipchain_a1.wav')
+chainwhip = create_sound('custom_sounds/whipchain_b1.wav')
 
 roffy_character_id = 4
 alto_character_id = 5
