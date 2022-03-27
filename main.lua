@@ -127,7 +127,7 @@ set_callback(function()
 	local shoppies = get_entities_by_type(ENT_TYPE.MONS_SHOPKEEPER)
 	for s, shoppie in ipairs(shoppies) do
 	
-		local r_tex = math.random(17)
+		local r_tex = math.random(16)+1
 		
         if r_tex == 1 then
             -- simply don't change the texture
