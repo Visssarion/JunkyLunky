@@ -58,7 +58,6 @@ Random shoppie code! By Trixelized
 --]]
 
 local texture_def = get_texture_definition(TEXTURE.DATA_TEXTURES_MONSTERSBASIC01_0)
-shoppie_number = 0;
 
 
 texture_def.texture_path = "custom_textures/custom_shoppie_01.png"
@@ -66,7 +65,7 @@ shoppie_tex_01 = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_02.png"
 shoppie_tex_02 = define_texture(texture_def)
-
+    
 texture_def.texture_path = "custom_textures/custom_shoppie_03.png"
 shoppie_tex_03 = define_texture(texture_def)
 
@@ -109,8 +108,6 @@ shoppie_tex_15 = define_texture(texture_def)
 texture_def.texture_path = "custom_textures/custom_shoppie_16.png"
 shoppie_tex_16 = define_texture(texture_def)
 
-texture_def.texture_path = "custom_textures/custom_shoppie_17.png"
-shoppie_tex_17 = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_skeleton.png"
 skeleton_text = define_texture(texture_def)
@@ -128,7 +125,8 @@ set_callback(function()
 	for s, shoppie in ipairs(shoppies) do
 	
 		local r_tex = math.random(16)+1
-		
+		message("n: " .. tostring(r_tex))
+
         if r_tex == 1 then
             -- simply don't change the texture
         elseif r_tex == 2 then
@@ -161,7 +159,7 @@ set_callback(function()
             get_entity(shoppie):set_texture(shoppie_tex_14)
         elseif r_tex == 16 then
             get_entity(shoppie):set_texture(shoppie_tex_15)
-        elseif r_tex == 16 then
+        elseif r_tex == 17 then
             get_entity(shoppie):set_texture(shoppie_tex_16)
         end
 
