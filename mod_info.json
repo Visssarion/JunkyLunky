@@ -7,6 +7,15 @@
                     "to": [ 0, 1792, 1279, 2047 ]
                 }
             ]
+        },
+
+        "custom_textures/sunkendude.png": {
+            "Data/Textures/deco_cosmic.png": [
+                {
+                    "from": [ 0, 0, 127, 255 ],
+                    "to": [ 1920, 1280, 2047, 1535 ]
+                }
+            ]
         }
     }
 
