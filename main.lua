@@ -125,7 +125,7 @@ set_callback(function()
 	for s, shoppie in ipairs(shoppies) do
 	
 		local r_tex = math.random(16)+1
-		message("n: " .. tostring(r_tex))
+		--message("n: " .. tostring(r_tex))
 
         if r_tex == 1 then
             -- simply don't change the texture
