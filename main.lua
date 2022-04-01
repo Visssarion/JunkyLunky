@@ -1,6 +1,6 @@
 meta.name = 'JunkyLunky Script'
-meta.version = '0.1'
-meta.description = 'Performs Junky Scripts (Souns, Textures, etc.)'
+meta.version = '1.0'
+meta.description = 'Performs Junky Scripts (Sounds, Textures, etc.)'
 meta.author = 'Trixelized, Vissa'
 
 -- Thanks @Trixelized
