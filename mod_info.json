@@ -16,6 +16,15 @@
                     "to": [ 1920, 1280, 2047, 1535 ]
                 }
             ]
+        },
+		
+		"custom_textures/anubis.png": {
+            "Data/Textures/monstersbig02.png": [
+                {
+                    "from": [ 0, 0, 2047, 1023 ],
+                    "to": [ 0, 1024, 2047, 2047 ]
+                }
+            ]
         }
     }
 
