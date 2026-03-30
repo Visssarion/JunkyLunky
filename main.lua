@@ -1,5 +1,5 @@
 meta.name = 'JunkyLunky Script'
-meta.version = '1.0'
+meta.version = '1.2'
 meta.description = 'Performs Junky Scripts (Sounds, Textures, etc.)'
 meta.author = 'Trixelized, Vissa'
 
@@ -58,55 +58,55 @@ Random shoppie code! By Trixelized
 --]]
 
 local texture_def = get_texture_definition(TEXTURE.DATA_TEXTURES_MONSTERSBASIC01_0)
-
+shoppie_tex = {}
 
 texture_def.texture_path = "custom_textures/custom_shoppie_01.png"
-shoppie_tex_01 = define_texture(texture_def)
+shoppie_tex[1] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_02.png"
-shoppie_tex_02 = define_texture(texture_def)
+shoppie_tex[2] = define_texture(texture_def)
     
 texture_def.texture_path = "custom_textures/custom_shoppie_03.png"
-shoppie_tex_03 = define_texture(texture_def)
+shoppie_tex[3] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_04.png"
-shoppie_tex_04 = define_texture(texture_def)
+shoppie_tex[4] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_05.png"
-shoppie_tex_05 = define_texture(texture_def)
+shoppie_tex[5] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_06.png"
-shoppie_tex_06 = define_texture(texture_def)
+shoppie_tex[6] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_07.png"
-shoppie_tex_07 = define_texture(texture_def)
+shoppie_tex[7] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_08.png"
-shoppie_tex_08 = define_texture(texture_def)
+shoppie_tex[8] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_09.png"
-shoppie_tex_09 = define_texture(texture_def)
+shoppie_tex[9] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_10.png"
-shoppie_tex_10 = define_texture(texture_def)
+shoppie_tex[10] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_11.png"
-shoppie_tex_11 = define_texture(texture_def)
+shoppie_tex[11] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_12.png"
-shoppie_tex_12 = define_texture(texture_def)
+shoppie_tex[12] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_13.png"
-shoppie_tex_13 = define_texture(texture_def)
+shoppie_tex[13] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_14.png"
-shoppie_tex_14 = define_texture(texture_def)
+shoppie_tex[14] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_15.png"
-shoppie_tex_15 = define_texture(texture_def)
+shoppie_tex[15] = define_texture(texture_def)
 
 texture_def.texture_path = "custom_textures/custom_shoppie_16.png"
-shoppie_tex_16 = define_texture(texture_def)
+shoppie_tex[16] = define_texture(texture_def)
 
 
 texture_def.texture_path = "custom_textures/custom_skeleton.png"
@@ -122,73 +122,47 @@ lizard_text = define_texture(texture_def)
 set_callback(function()
 
 	local shoppies = get_entities_by_type(ENT_TYPE.MONS_SHOPKEEPER)
+	seed_increment, seed_current = get_adventure_seed()
+	texture_seed = seed_current
 	for s, shoppie in ipairs(shoppies) do
-	
-		local r_tex = math.random(16)+1
+		
+		
+		-- vissa rewrite in 2026:
+		-- i replaced math.random with level seed dependant calculation
+		-- should not be synced in co-op
+		
+		local r_tex = texture_seed % 17
+		texture_seed = (texture_seed * 25214903917 + 11) % math.maxinteger
+		--print("shopk_id="..r_tex)
+		--local r_tex = math.random(16)+1
 		--message("n: " .. tostring(r_tex))
 
-        if r_tex == 1 then
+        if r_tex == 0 then
             -- simply don't change the texture
-        elseif r_tex == 2 then
-            get_entity(shoppie):set_texture(shoppie_tex_01)
-        elseif r_tex == 3 then
-            get_entity(shoppie):set_texture(shoppie_tex_02)
-        elseif r_tex == 4 then
-            get_entity(shoppie):set_texture(shoppie_tex_03)
-        elseif r_tex == 5 then
-            get_entity(shoppie):set_texture(shoppie_tex_04)
-        elseif r_tex == 6 then
-            get_entity(shoppie):set_texture(shoppie_tex_05)
-        elseif r_tex == 7 then
-            get_entity(shoppie):set_texture(shoppie_tex_06)
-        elseif r_tex == 8 then
-            get_entity(shoppie):set_texture(shoppie_tex_07)
-        elseif r_tex == 9 then
-            get_entity(shoppie):set_texture(shoppie_tex_08)
-        elseif r_tex == 10 then
-            get_entity(shoppie):set_texture(shoppie_tex_09)
-        elseif r_tex == 11 then
-            get_entity(shoppie):set_texture(shoppie_tex_10)
-        elseif r_tex == 12 then
-            get_entity(shoppie):set_texture(shoppie_tex_11)
-        elseif r_tex == 13 then
-            get_entity(shoppie):set_texture(shoppie_tex_12)
-        elseif r_tex == 14 then
-            get_entity(shoppie):set_texture(shoppie_tex_13)
-        elseif r_tex == 15 then
-            get_entity(shoppie):set_texture(shoppie_tex_14)
-        elseif r_tex == 16 then
-            get_entity(shoppie):set_texture(shoppie_tex_15)
-        elseif r_tex == 17 then
-            get_entity(shoppie):set_texture(shoppie_tex_16)
+        else
+            get_entity(shoppie):set_texture(shoppie_tex[r_tex])
         end
-
-		--[[
-        if r_tex == 1 then
-            -- simply don't change the texture
-        elseif r_tex == 2 then
-            get_entity(shoppie):set_texture(shoppie_tex_1)
-        elseif r_tex == 3 then
-            get_entity(shoppie):set_texture(shoppie_tex_2)
-        end
-        ]]
 		
 	end
     
+	texture_seed = seed_current
     local skeletons = get_entities_by_type(ENT_TYPE.MONS_SKELETON)
     for s, skeleton in ipairs(skeletons) do
     
-        local r_tex = math.random(50)
+        local r_tex = texture_seed % 50
+		texture_seed = (texture_seed * 25214903917 + 11) % math.maxinteger
         
         if r_tex == 1 then
             get_entity(skeleton):set_texture(skeleton_text)
         end   
     end
 
+	texture_seed = seed_current
     local lizards = get_entities_by_type(ENT_TYPE.MONS_HORNEDLIZARD)
     for s, lizard in ipairs(lizards) do
     
-        local r_tex = math.random(3)
+        local r_tex = texture_seed % 3
+		texture_seed = (texture_seed * 25214903917 + 11) % math.maxinteger
         
         if r_tex == 1 then
             get_entity(lizard):set_texture(lizard_text)
