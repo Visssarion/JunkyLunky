@@ -2,6 +2,7 @@ meta.name = 'JunkyLunky Script'
 meta.version = '1.2'
 meta.description = 'Performs Junky Scripts (Sounds, Textures, etc.)'
 meta.author = 'Trixelized, Vissa'
+meta.online_safe = true
 
 -- Thanks @Trixelized
 pre_spiritwhip = create_sound('custom_sounds/pre_spiritattack.wav')
